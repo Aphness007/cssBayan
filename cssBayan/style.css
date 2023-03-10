@@ -88,38 +88,30 @@ body {
 
 .list__icon {}
 
+/* ======   image    ====== */
+
 .img {
-    opacity: 0;
+    margin: 0px auto;
+    max-width: 0px;
+    max-height: 0px;
     visibility: hidden;
-    display: none;
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.5s linear 0s;
+}
+
+.img--forced {
+    margin: 30px auto 30px;
     max-width: 300px;
     max-height: 300px;
+    visibility: visible;
+    pointer-events: all;
+    opacity: 1;
+    transition: all 0.5s linear 0s;
 }
 
 .list__image img {
     max-width: 100%;
-}
-
-.page__list:hover {
-    color: #00030e;
-    cursor: pointer;
-}
-
-.page__nav:hover .list__cross {
-    transform: translate(0px, 0px);
-    visibility: visible;
-    opacity: 1;
-    pointer-events: all;
-}
-
-li:hover .list__icon::before {
-    transition: all 0.5s ease 0s;
-    transform: rotate(45deg);
-}
-
-li:hover .list__icon::after {
-    transition: all 0.5s ease 0s;
-    transform: rotate(-45deg);
 }
 
 
@@ -154,3 +146,49 @@ li:hover .list__icon::after {
 .list__icon::after {
     transform: rotate(90deg);
 }
+
+
+@media (min-width:1024px) {
+    .page__list:hover {
+        color: #00030e;
+        cursor: pointer;
+    }
+
+    .page__nav:hover .list__cross {
+        transform: translate(0px, 0px);
+        visibility: visible;
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .page__nav:hover .list__cross>.icon--list--forced::before {
+        transition: all 0.5s ease 0s;
+        transform: rotate(45deg);
+    }
+
+    .page__nav:hover .list__cross>.icon--list--forced::after {
+        transition: all 0.5s ease 0s;
+        transform: rotate(-45deg);
+    }
+
+    li:hover .list__icon::before {
+        transition: all 0.5s ease 0s;
+        transform: rotate(45deg);
+    }
+
+    li:hover .list__icon::after {
+        transition: all 0.5s ease 0s;
+        transform: rotate(-45deg);
+    }
+
+    li:hover .img {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(0px, 0px);
+        margin: 30px auto 30px;
+        max-width: 300px;
+        max-height: 300px;
+    }
+}
+
+@media (max-width:320px) and (min-width:1022px) {}
