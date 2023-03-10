@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+
+body {
+    font-family: Lato, serif;
+    font-weight: 700;
+    color: #1f47d7;
+    background-color: #f9f8f8;
+    line-height: 1.5;
+    background-color: antiquewhite;
+
+}
+
+.wrapper {
+    min-height: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper>main {
+    flex-grow: 1;
+}
+
+[class*="__container"] {
+    max-width: 1920px;
+    padding: 100px 20px;
+    margin: 0 auto;
+}
+
+
+/* ========= */
+.page {}
+
+.page__container {}
+
+.page__body {
+    margin: 0px 150px;
+}
+
+.page__title:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.page__title {
+    position: relative;
+    color: #00030e;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.page__nav {}
+
+
+
+.page__list>li {
+    position: relative;
+    padding: 10px 0px 10px 0px;
+
+}
+
+.page__list>li:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.page__title::after,
+.page__list>li::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #cecfd6;
+}
+
+.list {}
+
+.list__row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.list__link {}
+
+.list__icon {}
+
+.img {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.list__image img {
+    max-width: 100%;
+}
+
+.page__list:hover {
+    color: #00030e;
+    cursor: pointer;
+}
+
+.page__nav:hover .list__cross {
+    transform: translate(0px, 0px);
+    visibility: visible;
+    opacity: 1;
+    pointer-events: all;
+}
+
+li:hover .list__icon::before {
+    transition: all 0.5s ease 0s;
+    transform: rotate(45deg);
+}
+
+li:hover .list__icon::after {
+    transition: all 0.5s ease 0s;
+    transform: rotate(-45deg);
+}
+
+
+
+/* ======   cross    ====== */
+.list__cross {
+    /* display: block; */
+    position: relative;
+    width: 25px;
+    height: 25px;
+    visibility: hidden;
+    transform: translate(0px, 10px);
+    pointer-events: none;
+    opacity: 0;
+    transition: transform 0.5s linear 0s;
+    z-index: 4;
+}
+
+
+.list__icon::before,
+.list__icon::after {
+    position: absolute;
+    content: '';
+    right: 2px;
+    top: 5px;
+    height: 2px;
+    width: 10px;
+    background-color: rgb(191, 55, 55);
+    transition: all 0.5s ease 0s;
+}
+
+.list__icon::after {
+    transform: rotate(90deg);
+}
